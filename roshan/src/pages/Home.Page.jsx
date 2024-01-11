@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-
+import React, { useEffect,useState } from "react";
+import axios from "axios";
 // HOC
 import DefaultlayoutHoc from "../layouts/Default.layout";
 import PosterSlider from "../components/PosterSlider/PosterSlider.Component";
@@ -18,7 +18,7 @@ const HomePage = () => {
       const getTopRatedMovies = await axios.get(
         "https://api.themoviedb.org/3/movie/top_rated?api_key=c54ab2f18bdf2fcbf4283c5aa5ab488c"
       );
-      setrecommendedMovies(getTopRatedMovies.data.results);
+      setrecomendedMovies(getTopRatedMovies.data.results);
     };
     requestTopRatedMovies();
   }, []);
